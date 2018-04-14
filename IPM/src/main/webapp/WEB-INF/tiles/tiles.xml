@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- App Definition -->
+	<definition name="app-definition" template="/WEB-INF/tiles/layouts/app.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/tiles/partials/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/tiles/partials/sidebar.jsp" />
+		<put-attribute name="main" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/partials/footer.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/static/vendor/jQuery/jquery-2.2.3.min.js" />
+			<add-attribute value="/static/vendor/jQueryUI/jquery-ui.min.js" />
+			<add-attribute value="/static/vendor/bootstrap/js/bootstrap.min.js" />
+			<add-attribute value="/static/vendor/datatables/jquery.dataTables.min.js" />
+			<add-attribute value="/static/vendor/datatables/dataTables.bootstrap.min.js" />
+			<add-attribute value="/static/vendor/sparkline/jquery.sparkline.min.js" />
+			<add-attribute value="/static/vendor/slimScroll/jquery.slimscroll.min.js" />
+			<add-attribute value="/static/vendor/fastclick/fastclick.js" />
+			<add-attribute value="/static/vendor/input-mask/jquery.inputmask.js" />
+			<add-attribute value="/static/vendor/input-mask/jquery.inputmask.date.extensions.js" />
+			<add-attribute value="/static/vendor/input-mask/jquery.inputmask.extensions.js" />
+			<add-attribute value="/static/vendor/moment/min/moment.min.js" />
+			<add-attribute value="/static/vendor/bootstrap-daterangepicker/daterangepicker.js" />
+			<add-attribute value="/static/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" />
+			<add-attribute value="/static/dist/js/app.min.js" />
+			<add-attribute value="/static/dist/js/custom.js" />
+		</put-list-attribute>
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/static/vendor/bootstrap/css/bootstrap.min.css" />
+			<add-attribute value="/static/vendor/font-awesome/css/font-awesome.min.css" />
+			<add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+			<add-attribute value="/static/dist/css/AdminLTE.min.css" />
+			<add-attribute value="/static/dist/css/skins/_all-skins.min.css" />
+			<add-attribute value="/static/vendor/datatables/dataTables.bootstrap.css" />
+			<add-attribute value="/static/vendor/bootstrap-daterangepicker/daterangepicker.css" />
+			<add-attribute value="/static/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+			<add-attribute value="/static/dist/css/custom.css" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- Security Definition -->
+	<definition name="authentication-definition" template="/WEB-INF/tiles/layouts/authentication.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="main" value="" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/static/vendor/bootstrap/css/bootstrap.min.css" />
+			<add-attribute value="/static/vendor/font-awesome/css/font-awesome.min.css" />
+			<add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+			<add-attribute value="/static/dist/css/AdminLTE.min.css" />
+			<add-attribute value="/static/dist/css/skins/_all-skins.min.css" />
+		</put-list-attribute>
+
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/static/vendor/jQuery/jquery-2.2.3.min.js" />
+			<add-attribute value="/static/vendor/bootstrap/js/bootstrap.min.js" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- ================Authentication page ================== -->
+	<!-- Login Pages -->
+	<definition name="login" extends="authentication-definition">
+		<put-attribute name="title" value="IPM | Login " />
+		<put-attribute name="main" value="/WEB-INF/pages/authentication/login.jsp" />
+	</definition>
+	
+	<!-- ================Error page ================== -->
+	<!-- 404 error -->
+	<definition name="404" extends="app-definition">
+		<put-attribute name="title" value="IPM | 404-Resource not found " />
+		<put-attribute name="main" value="/WEB-INF/pages/error_pages/404.jsp" />
+	</definition>
+	
+	<!-- 403 error -->
+	<definition name="403" extends="app-definition">
+		<put-attribute name="title" value="IPM | 403-Forbidden access denied " />
+		<put-attribute name="main" value="/WEB-INF/pages/error_pages/403.jsp" />
+	</definition>
+	
+	<!-- 500 error -->
+	<definition name="500" extends="app-definition">
+		<put-attribute name="title" value="IPM | 500-Internal Server Error " />
+		<put-attribute name="main" value="/WEB-INF/pages/error_pages/500.jsp" />
+	</definition>
+	
+	<!-- ================Admin page ================== -->
+	<!-- Admin Human Resource management | Show list Human Resource -->
+	<definition name="hrList" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Human Resource Manage-Show List" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/hr_management/list.jsp" />
+	</definition>
+
+	<!-- Admin Human Resource management | Add Human Resource -->
+	<definition name="hrAdd" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Human Resource Manage-Add" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/hr_management/add.jsp" />
+	</definition>
+
+	<!-- Admin Human Resource management | Update Human Resource -->
+	<definition name="hrUpdate" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Human Resource Manage-Update" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/hr_management/edit.jsp" />
+	</definition>
+
+	<!-- Admin Interviewer management | Show list Interviewer -->
+	<definition name="interviewerList" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Interviewer Manage-Show List" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/interviewer_management/list.jsp" />
+	</definition>
+
+	<!-- Admin Interviewer management | Add Interviewer -->
+	<definition name="interviewerAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | Admin-Interviewer Manage-Add" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/interviewer_management/add.jsp" />
+	</definition>
+
+	<!-- Admin Interviewer management | Update Interviewer -->
+	<definition name="interviewerUpdate" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Interviewer Manage-Update" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/interviewer_management/edit.jsp" />
+	</definition>
+	
+	<!-- Admin Profile management | Update Profile -->
+	<definition name="profileAdmin" extends="app-definition">
+		<put-attribute name="title"
+			value="IPM | Admin-Update profile" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/profile.jsp" />
+	</definition>
+	
+	<!-- ================HR pages ================== -->
+	<!-- HR manage major | Major manage -->
+	<definition name="majorList" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Show List Major" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/major_management/list.jsp" />
+	</definition>
+	
+	<definition name="majorSearch" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Search Major" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/major_management/search.jsp" />
+	</definition>
+	
+	<definition name="majorAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Add Major" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/major_management/add.jsp" />
+	</definition>
+	
+	<definition name="majorUpdate" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Edit Major" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/major_management/edit.jsp" />
+	</definition>
+
+	<!-- Candidate manage -->
+	<definition name="candidateList" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Candidate Manage-Show List" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/candidate_management/list.jsp" />
+	</definition>
+	
+	<definition name="candidateUpdate" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Candidate Manage-Show detail and edit" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/candidate_management/edit.jsp" />
+	</definition>
+	
+	<definition name="candidateAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Candidate Manage-Add" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/candidate_management/add.jsp" />
+	</definition>
+	
+	<!-- Recruitment group management -->
+	<definition name="recruitmentGroupList" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment group management-Show List" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/group_recruitment_management/list.jsp" />
+	</definition>
+	
+	<definition name="recruitmentGroupAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment group management-Add" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/group_recruitment_management/add.jsp" />
+	</definition>
+	
+	<definition name="recruitmentGroupUpdate" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment group management-Update" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/group_recruitment_management/edit.jsp" />
+	</definition>
+	
+	<!-- Recruitment management -->
+	<definition name="recruitmentList" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment Manage-Add" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/recruitment_management/list.jsp" />
+	</definition>
+	
+	<definition name="recruitmentAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment Manage-View" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/recruitment_management/add.jsp" />
+	</definition>
+	
+	<definition name="updateRecruitment" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Recruitment Manage-Update" />
+		<put-attribute name="main" value="/WEB-INF/pages/hr/recruitment_management/update.jsp" />
+	</definition>
+	
+	<!-- HR manage position -->
+	<definition name="positionList" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Show List Position" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/position_management/list.jsp" />
+	</definition>
+	
+	<definition name="positionAdd" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Add Position" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/position_management/add.jsp" />
+	</definition>
+	
+	<definition name="positionUpdate" extends="app-definition">
+		<put-attribute name="title" value="IPM | HR-Update Position" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/hr/position_management/edit.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>

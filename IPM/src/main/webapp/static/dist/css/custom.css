@@ -1,0 +1,30 @@
+#btnUpdateAdmin, #btnUpdateMajor {
+	display: none;
+}
+
+#infoMajor {
+	word-wrap: break-word;
+}
+
+.spanMajor {
+	height: 30px;
+}
+
+.spanBtnMajor {
+	margin-right: 5px
+}
+
+a.btn-add{
+	margin-bottom: 10px;
+}
+
+div.main-search {
+	margin-bottom: 10px;
+}
+
+/*
+ hr/major_management/edit.jsp
+*/
+#descriptionMajor {
+	resize: none;
+}
